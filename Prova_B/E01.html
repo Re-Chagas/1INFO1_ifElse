@@ -1,5 +1,5 @@
 <script>
-    /*
+  /*
     Problema: Compra de computadores
     Uma loja de computadores vende computadores por R$ 1.500,00 cada.
     - Se o cliente comprar mais de 5 computadores, a loja dá um desconto de 10% no valor total da compra.
@@ -7,13 +7,42 @@
     Peça para o usuário informar quantos computadores ele deseja comprar e também pergunte se pagará em dinheiro. Se o pagamento for em dinheiro, a loja dá mais 5% de desconto no valor total da compra.
     Calcule e apresente o valor total que o usuário deverá pagar pelos computadores.
     */
-    
-    //Entrada
 
+  //Entrada
 
-    //Processamento
+  const CVendidos = Number(
+    prompt(`Quantos computadores vc pretende comprar?`).replace(",", ".")
+  );
+  const DC = prompt(
+    `voce vai pagar no cartao ou em dinheiro?(C-cartão, D-dinheiro)`
+  )
+    .trim()
+    .toUpperCase();
 
+  //Processamento
 
-    //Saída
+  const desconto5 = CVendidos * 1500 * 0.05;
+  const desconto10 = CVendidos * 1500 * 0.1;
+  const desconto15 = CVendidos * 1500 * 0.15;
+  const desconto20 = CVendidos * 1500 * 0.2;
 
+  if (DC == "C") {
+    if (CVendidos > 4 && CVendidos < 10) {
+      alert(`Voce deve pagar $${CVendidos * 1500 - desconto10}`);
+    } else if (CVendidos >= 10) {
+      alert(`Voce devera pagar $${CVendidos * 1500 - desconto15}`);
+    } else if (CVendidos < 5) {
+      alert(`voce devera pagar $${CVendidos * 1500}`);
+    }
+  } else if (DC == "D") {
+    if (CVendidos > 4 && CVendidos < 10) {
+      alert(`Voce deve pagar $${CVendidos * 1500 - desconto15}`);
+    } else if (CVendidos >= 10) {
+      alert(`Voce devera pagar $${CVendidos * 1500 - desconto20}`);
+    } else if (CVendidos < 5) {
+      alert(`voce devera pagar ${CVendidos * 1500 - desconto5}`);
+    }
+  } else `valor invalido`;
+
+  //Saída
 </script>

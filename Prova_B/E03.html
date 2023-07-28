@@ -1,18 +1,45 @@
 <script>
-    /*
+  /*
     Problema: Compra de Carteiras e Cadeiras
     Uma instituição está em busca de novas carteiras e cadeiras para as salas de aula. Para isso, a instituição está fazendo uma pesquisa de preços em algumas lojas da região, que vendem as duas peças em conjunto.
     Faça um programa que peça para o usuário informar o preço do conjunto (carteira e cadeira) em 3 lojas distintas (Loja 1, Loja 2 e Loja 3). Também peça para o usuário informar a quantidade de carteiras e cadeiras que ele deseja comprar.
     Considere que, se a quantidade for superior a 80 conjuntos, 5 serão doados pelos vendedores. Se a quantidade for superior a 100 conjuntos, 10 serão doados pelos vendedores.
     Calcule o valor total da compra em cada loja e apresente ao usuário qual loja possui o menor valor total da compra.
     */
-    
-    //Entrada
 
+  //Entrada
 
-    //Processamento
+  const loja1 = Number(
+    prompt(`Me infrome o preço do conjunto de carteira e cadeira`)
+  );
+  const loja2 = Number(
+    prompt(`Me infrome o preço do conjunto de carteira e cadeira`)
+  );
+  const loja3 = Number(
+    prompt(`Me infrome o preço do conjunto de carteira e cadeira`)
+  );
+  let Conjunto = Number(prompt(`quantos conjuntos deseja comprar?`));
+  //Processamento
 
+  if (Conjunto > 80 && Conjunto < 101) {
+    Conjunto = Conjunto - 5;
+  } else if (Conjunto > 100) {
+    Conjunto = Conjunto - 10;
+  } else {
+    alert(`valor invalido`);
+  }
 
-    //Saída
+  const RL1 = loja1 * Conjunto;
+  const RL2 = loja2 * Conjunto;
+  const RL3 = loja2 * Conjunto;
 
+  if (RL1 < Rl2 && RL1 < RL3) {
+    alert(`a primeria loja possui o valor mais em conta`);
+  } else if (RL2 < RL3 && RL2 < RL3) {
+    alert(`a segunda loja possui o valor mais em conta`);
+  } else {
+    alert(`a terceira loja possui o valor mais em conta`);
+  }
+
+  //Saída
 </script>

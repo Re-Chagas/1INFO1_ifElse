@@ -1,5 +1,5 @@
 <script>
-    /*
+  /*
     Problema: Consumo de Água
     Faça um programa que receba a quantidade de litros de água consumidos por uma residência diariamente. Também pergunte para o usuário a quantidade de pessoas que residem na casa.
     Calcule quantos litros são consumidos por cada pessoa.
@@ -7,13 +7,27 @@
 
     *Não há valor definido para o litro da água.
     */
-    
-    //Entrada
 
+  //Entrada
 
-    //Processamento
+  const litrosConsu = Number(
+    prompt(`quantos litros de agua sao gastos diariamente?`)
+  );
+  const pessoas = Number(prompt(`quantoas pessoas moram na casa?`));
 
+  //Processamento
 
-    //Saída
+  const LporPessoa = litrosConsu / pessoas;
 
+  //Saída
+
+  if (LporPessoa > 300) {
+    alert(`sua residencia sera penalizada em 15% na tarifa de agua`);
+  } else if (LporPessoa > 500) {
+    alert(`sua residencia sofrera uma penalizaçao de 30%`);
+  } else if (LporPessoa < 300) {
+    alert(`PARABENS!!! seu cosumo é consciente`);
+  } else {
+    alert(`pergunte de novo`);
+  }
 </script>
